@@ -2,23 +2,27 @@ package dto;
 
 import lombok.*;
 
-
-@Getter
 @Setter
-@ToString
+@Getter
 @Builder
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 
 public class Car {
-    private String location;
+    private String serialNumber;
     private String manufacture;
     private String model;
     private String year;
     private String fuel;
     private Integer seats;
     private String carClass;
-    private String carRegistrationNumber;
-    private Double price;
+    private Double pricePerDay;
     private String about;
+    private String city;
+    private Double lat;
+    private Double lng;
+    private String image;
+    private String owner;
+    BookedDto[] bookedPeriods;
 }
