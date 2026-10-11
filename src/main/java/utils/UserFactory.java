@@ -1,6 +1,5 @@
 package utils;
 
-import dto.User;
 import dto.UserLombok;
 import net.datafaker.Faker;
 
@@ -10,7 +9,7 @@ public class UserFactory {
    public static UserLombok positiveUser(){
        UserLombok user = UserLombok.builder()
                .username(faker.internet().emailAddress())
-               .password(PropertiesReader.getProperty("base.properties", "password_for_registration"))
+               .password(("Qwerty123!"))
                .firstName(faker.name().firstName())
                .lastName(faker.name().lastName())
                .build();
