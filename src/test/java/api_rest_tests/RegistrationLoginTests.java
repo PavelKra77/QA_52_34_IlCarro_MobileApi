@@ -140,4 +140,14 @@ public class RegistrationLoginTests extends AuthController {
         Assert.assertEquals(response.getStatusCode(), 500);
     }
 
+    @Test
+    public void registrationDuplicateUserNegativeTest() {
+        UserLombok user = UserLombok.builder()
+                .username(PropertiesReader.getProperty("base.properties", "username"))
+                .password(PropertiesReader.getProperty("base.properties", "password"))
+                .build();
+
+        Response response = registrationLogin(user, REGISTRATION_URL);
+        Assert.assertEquals(response.getStatusCode(), 400);
+    }
 }
